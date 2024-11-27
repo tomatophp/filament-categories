@@ -1,0 +1,29 @@
+{
+    "name": "FilamentCategories",
+    "alias": "filament-categories",
+    "description": {
+        "ar": "Manage your categories for any model type with relation manager integration for TomatoPHP",
+        "en": "Manage your categories for any model type with relation manager integration for TomatoPHP",
+        "gr": "Manage your categories for any model type with relation manager integration for TomatoPHP",
+        "sp": "Manage your categories for any model type with relation manager integration for TomatoPHP"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "TomatoPHP\\FilamentCategories\\FilamentCategoriesServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Filament categories",
+        "en": "Filament categories",
+        "gr": "Filament categories",
+        "sp": "Filament categories"
+    },
+    "color": "#cc1448",
+    "icon": "heroicon-c-users",
+    "placeholder": "https://raw.githubusercontent.com/tomatophp/filament-categories/master/art/screenshot.jpg",
+    "type": "plugin",
+    "version": "v1.0.0",
+    "github" : "https://github.com/tomatophp/filament-categories",
+    "docs" : "https://github.com/tomatophp/filament-categories"
+}
