@@ -12,8 +12,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
 /**
- * @property integer $id
- * @property integer $parent_id
+ * @property int $id
+ * @property int $parent_id
  * @property string $for
  * @property string $type
  * @property string $name
@@ -21,20 +21,20 @@ use Spatie\Translatable\HasTranslations;
  * @property string $description
  * @property string $icon
  * @property string $color
- * @property boolean $is_active
- * @property boolean $show_in_menu
+ * @property bool $is_active
+ * @property bool $show_in_menu
  * @property string $created_at
  * @property string $updated_at
  */
 class Category extends Model implements HasMedia
 {
-    use InteractsWithMedia;
     use HasTranslations;
+    use InteractsWithMedia;
     use SoftDeletes;
 
     public $translatable = [
         'name',
-        'description'
+        'description',
     ];
 
     /**
@@ -52,38 +52,26 @@ class Category extends Model implements HasMedia
         'is_active',
         'show_in_menu',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
-
 
     protected $casts = [
         'is_active' => 'boolean',
         'show_in_menu' => 'boolean',
     ];
 
-    /**
-     * @return ?BelongsTo
-     */
     public function team(): ?BelongsTo
     {
         return class_exists(Team::class) ? $this->belongsTo(Team::class) : null;
     }
 
-    /**
-     * @return HasMany
-     */
     public function children(): HasMany
     {
         return $this->hasMany('TomatoPHP\FilamentCategories\Models\Category', 'parent_id');
     }
 
-
-    /**
-     * @return BelongsTo
-     */
     public function parent(): BelongsTo
     {
         return $this->belongsTo('TomatoPHP\FilamentCategories\Models\Category', 'parent_id');
     }
-
 }

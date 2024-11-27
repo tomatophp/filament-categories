@@ -28,7 +28,6 @@ class FilamentCategoriesInstall extends Command
         parent::__construct();
     }
 
-
     /**
      * Execute the console command.
      *
@@ -37,8 +36,8 @@ class FilamentCategoriesInstall extends Command
     public function handle()
     {
         $this->info('Publish Vendor Assets');
-        $this->artisanCommand(["migrate"]);
-        $this->artisanCommand(["optimize"]);
+        $this->artisanCommand(['migrate']);
+        $this->artisanCommand(['optimize']);
         $this->info('Filament Categories installed successfully.');
     }
 }
