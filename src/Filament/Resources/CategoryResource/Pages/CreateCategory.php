@@ -2,9 +2,9 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource\Pages;
 
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource;
 
 class CreateCategory extends CreateRecord
 {
@@ -15,7 +15,7 @@ class CreateCategory extends CreateRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\LocaleSwitcher::make(),
+            Actions\LocaleSwitcher::make()
         ];
     }
 }
