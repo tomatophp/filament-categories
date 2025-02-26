@@ -4,16 +4,14 @@ namespace TomatoPHP\FilamentCategories\Models;
 
 use App\Models\Team;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Translatable\HasTranslations;
 
 /**
- * @property int $id
- * @property int $parent_id
+ * @property integer $id
+ * @property integer $parent_id
  * @property string $for
  * @property string $type
  * @property string $name
@@ -21,20 +19,24 @@ use Spatie\Translatable\HasTranslations;
  * @property string $description
  * @property string $icon
  * @property string $color
- * @property bool $is_active
- * @property bool $show_in_menu
+ * @property boolean $is_active
+ * @property boolean $show_in_menu
  * @property string $created_at
  * @property string $updated_at
+ * @property Categorable[] $categorables
+ * @property Category $category
+ * @property CategoriesMeta[] $categoriesMetas
+ * @property Content[] $contents
  */
 class Category extends Model implements HasMedia
 {
-    use HasTranslations;
     use InteractsWithMedia;
+    use HasTranslations;
     use SoftDeletes;
 
     public $translatable = [
         'name',
-        'description',
+        'description'
     ];
 
     /**
@@ -52,26 +54,38 @@ class Category extends Model implements HasMedia
         'is_active',
         'show_in_menu',
         'created_at',
-        'updated_at',
+        'updated_at'
     ];
+
 
     protected $casts = [
         'is_active' => 'boolean',
         'show_in_menu' => 'boolean',
     ];
 
-    public function team(): ?BelongsTo
+    public function team()
     {
-        return class_exists(Team::class) ? $this->belongsTo(Team::class) : null;
+        return $this->belongsTo(Team::class);
     }
 
-    public function children(): HasMany
+    public function children()
     {
         return $this->hasMany('TomatoPHP\FilamentCategories\Models\Category', 'parent_id');
     }
 
-    public function parent(): BelongsTo
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function parent()
     {
         return $this->belongsTo('TomatoPHP\FilamentCategories\Models\Category', 'parent_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function categoriesMetas()
+    {
+        return $this->hasMany('TomatoPHP\FilamentCategories\Models\CategoriesMeta');
     }
 }
