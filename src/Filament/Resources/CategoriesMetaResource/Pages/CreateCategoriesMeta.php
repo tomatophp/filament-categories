@@ -2,9 +2,8 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\Pages;
 
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
 
 class CreateCategoriesMeta extends CreateRecord
 {

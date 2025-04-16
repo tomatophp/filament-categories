@@ -27,13 +27,13 @@ return [
                     'show_in_menu' => 'Show In Menu',
                 ],
             ],
-            "images" => [
-                "title" => "Images",
-                "description" => "Images settings",
-                "columns" => [
-                    "feature_image" => "Feature Image",
-                    "cover_image" => "Cover Image",
-                ]
+            'images' => [
+                'title' => 'Images',
+                'description' => 'Images settings',
+                'columns' => [
+                    'feature_image' => 'Feature Image',
+                    'cover_image' => 'Cover Image',
+                ],
             ],
         ],
     ],

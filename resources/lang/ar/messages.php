@@ -27,13 +27,13 @@ return [
                     'show_in_menu' => 'إظهار في القائمة',
                 ],
             ],
-            "images" => [
-                "title" => "الصور",
-                "description" => "إعدادات الصور",
-                "columns" => [
-                    "feature_image" => "صورة مميزة",
-                    "cover_image" => "صورة الغلاف",
-                ]
+            'images' => [
+                'title' => 'الصور',
+                'description' => 'إعدادات الصور',
+                'columns' => [
+                    'feature_image' => 'صورة مميزة',
+                    'cover_image' => 'صورة الغلاف',
+                ],
             ],
         ],
     ],

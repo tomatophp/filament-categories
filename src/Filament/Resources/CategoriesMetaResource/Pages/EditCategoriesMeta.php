@@ -2,9 +2,9 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\Pages;
 
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
 
 class EditCategoriesMeta extends EditRecord
 {

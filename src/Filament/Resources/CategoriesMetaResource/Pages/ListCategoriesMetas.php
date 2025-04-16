@@ -2,9 +2,9 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\Pages;
 
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource;
 
 class ListCategoriesMetas extends ListRecords
 {

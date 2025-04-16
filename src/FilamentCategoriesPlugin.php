@@ -18,17 +18,16 @@ class FilamentCategoriesPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        if(class_exists(Module::class) && \Nwidart\Modules\Facades\Module::find('FilamentCategories')?->isEnabled()){
+        if (class_exists(Module::class) && \Nwidart\Modules\Facades\Module::find('FilamentCategories')?->isEnabled()) {
             $this->isActive = true;
-        }
-        else {
+        } else {
             $this->isActive = true;
         }
 
-        if($this->isActive) {
+        if ($this->isActive) {
             $panel->resources([
                 CategoryResource::class,
-                CategoriesMetaResource::class
+                CategoriesMetaResource::class,
             ]);
         }
     }
@@ -39,7 +38,7 @@ class FilamentCategoriesPlugin implements Plugin
     }
 
     public static function make(): self
-    {   
+    {
         return new FilamentCategoriesPlugin;
     }
 }

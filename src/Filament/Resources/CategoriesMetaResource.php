@@ -2,16 +2,13 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources;
 
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\Pages;
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\RelationManagers;
-use TomatoPHP\FilamentCategories\Models\CategoriesMeta;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoriesMetaResource\Pages;
+use TomatoPHP\FilamentCategories\Models\CategoriesMeta;
 
 class CategoriesMetaResource extends Resource
 {
