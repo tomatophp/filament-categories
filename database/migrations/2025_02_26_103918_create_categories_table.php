@@ -8,15 +8,15 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('team_id')->nullable()->after('id');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+
             $table->foreignId('parent_id')->nullable()->references('id')->on('categories')->onDelete('cascade');
             $table->string('for')->default('posts')->nullable();
             $table->string('type')->default('category')->nullable();
@@ -37,10 +37,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('categories');
     }

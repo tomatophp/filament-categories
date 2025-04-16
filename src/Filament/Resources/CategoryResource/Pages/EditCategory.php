@@ -2,9 +2,9 @@
 
 namespace TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource\Pages;
 
+use TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use TomatoPHP\FilamentCategories\Filament\Resources\CategoryResource;
 
 class EditCategory extends EditRecord
 {
@@ -12,11 +12,12 @@ class EditCategory extends EditRecord
 
     protected static string $resource = CategoryResource::class;
 
+
     protected function getHeaderActions(): array
     {
         return [
             Actions\DeleteAction::make(),
-            Actions\LocaleSwitcher::make(),
+            Actions\LocaleSwitcher::make()
         ];
     }
 }
